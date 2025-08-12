@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Invalid API Tests(failed)">
+    <classes>
+      <class name="com.qa.api.invalidtests.ViewInvalidUserTests">
+        <methods>
+          <include name="setupSuite"/>
+          <include name="testViewUserWithInvalidData"/>
+        </methods>
+      </class> <!-- com.qa.api.invalidtests.ViewInvalidUserTests -->
+      <class name="com.qa.api.invalidtests.DeleteInvalidUserTests">
+        <methods>
+          <include name="testDeleteUserWithInvalidData"/>
+          <include name="setupSuite"/>
+        </methods>
+      </class> <!-- com.qa.api.invalidtests.DeleteInvalidUserTests -->
+      <class name="com.qa.api.invalidtests.UpdateInvalidUserTests">
+        <methods>
+          <include name="testUpdateUserWithInvalidData"/>
+          <include name="setupSuite"/>
+        </methods>
+      </class> <!-- com.qa.api.invalidtests.UpdateInvalidUserTests -->
+      <class name="com.qa.api.invalidtests.AddInvalidUserTests">
+        <methods>
+          <include name="setupSuite"/>
+          <include name="testAddUserWithInvalidData"/>
+        </methods>
+      </class> <!-- com.qa.api.invalidtests.AddInvalidUserTests -->
+    </classes>
+  </test> <!-- Invalid API Tests(failed) -->
+</suite> <!-- Failed suite [Suite] -->

@@ -1,0 +1,264 @@
+2025-08-12 10:53:47 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\saheb\eclipse-workspace\CallTaxi_RestAssured\testng.xml
+
+2025-08-12 10:53:47 [main] INFO  LoggerUtil - ===== Setting up API Test Base =====
+2025-08-12 10:53:47 [main] INFO  LoggerUtil - Base URI set to: https://webapps.tekstac.com/HotelAPI/UserService
+2025-08-12 10:53:47 [main] INFO  LoggerUtil - Requesting Auth Code from: https://webapps.tekstac.com/OAuthRestApi/webapi/auth/login
+2025-08-12 10:53:48 [main] INFO  LoggerUtil - Auth Code Response Status: 200
+2025-08-12 10:53:48 [main] INFO  LoggerUtil - Auth Code Response Body: {"auth_code":"LfVG5YuwUwwRg110fbPwtw"}
+2025-08-12 10:53:49 [main] INFO  LoggerUtil - Auth Code: LfVG5YuwUwwRg110fbPwtw
+2025-08-12 10:53:49 [main] INFO  LoggerUtil - Requesting Access Token from: https://webapps.tekstac.com/OAuthRestApi/webapi/auth/token using Auth Code: LfVG5YuwUwwRg110fbPwtw
+2025-08-12 10:53:49 [main] INFO  LoggerUtil - Access Token Response Status: 200
+2025-08-12 10:53:49 [main] INFO  LoggerUtil - Access Token Response Body: {"access_token":"jQWSDEhpIc9bRr8XNxBf94nnUFX31D2dgDKOEeTD-sw"}
+2025-08-12 10:53:49 [main] INFO  LoggerUtil - Access Token: jQWSDEhpIc9bRr8XNxBf94nnUFX31D2dgDKOEeTD-sw
+2025-08-12 10:53:49 [main] INFO  LoggerUtil - Test 1 Started - Get Users (viewUserList)
+2025-08-12 10:53:49 [main] INFO  LoggerUtil - Fetching all users...
+2025-08-12 10:53:49 [main] INFO  LoggerUtil - GET /viewUserList Response: [{"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"1234567890","gender":"Male"},{"userId":10002,"emailId":"user2@test.com","aadhaarNumber":"123400000031","firstName":"Rahul","lastName":"Dravid","phoneNumber":"2334567890","gender":"Male"},{"userId":10003,"emailId":"user3@test.com","aadhaarNumber":"123400000041","firstName":"Preethi","lastName":"S","phoneNumber":"3234567890","gender":"Female"}]
+2025-08-12 10:53:50 [main] INFO  LoggerUtil - Users fetched: 3
+2025-08-12 10:53:50 [main] INFO  LoggerUtil - Test 2 Started - Get User By Id
+2025-08-12 10:53:50 [main] INFO  LoggerUtil - Fetching user by ID: 10001
+2025-08-12 10:53:50 [main] INFO  LoggerUtil - GET /viewUserById Response: {"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"1234567890","gender":"Male"}
+2025-08-12 10:53:50 [main] INFO  LoggerUtil - User details: {userId=10001, emailId=user1@test.com, aadhaarNumber=123400000011, firstName=Raj, lastName=Kumar, phoneNumber=1234567890, gender=Male}
+2025-08-12 10:53:50 [main] INFO  LoggerUtil - Test 3 Started - Get Users By Gender
+2025-08-12 10:53:50 [main] INFO  LoggerUtil - Fetching users by gender: Male
+2025-08-12 10:53:50 [main] INFO  LoggerUtil - GET /viewUserByGender Response: [{"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"1234567890","gender":"Male"},{"userId":10002,"emailId":"user2@test.com","aadhaarNumber":"123400000031","firstName":"Rahul","lastName":"Dravid","phoneNumber":"2334567890","gender":"Male"}]
+2025-08-12 10:53:50 [main] INFO  LoggerUtil - Test 4 Started - Add User
+2025-08-12 10:53:50 [main] INFO  LoggerUtil - Adding a new user...
+2025-08-12 10:53:50 [main] INFO  LoggerUtil - POST /addUser Response: [{"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"1234567890","gender":"Male"},{"userId":10002,"emailId":"user2@test.com","aadhaarNumber":"123400000031","firstName":"Rahul","lastName":"Dravid","phoneNumber":"2334567890","gender":"Male"},{"userId":10003,"emailId":"user3@test.com","aadhaarNumber":"123400000041","firstName":"Preethi","lastName":"S","phoneNumber":"3234567890","gender":"Female"},{"userId":20001,"emailId":"newuser@test.com","aadhaarNumber":"123456789012","firstName":"John","lastName":"Doe","phoneNumber":"9876543210","gender":"Male"}]
+2025-08-12 10:53:50 [main] INFO  LoggerUtil - Test 5 Started - Update User Phone Number
+2025-08-12 10:53:50 [main] INFO  LoggerUtil - Updating phone number for user ID 10001...
+2025-08-12 10:53:50 [main] INFO  LoggerUtil - PUT /updateUserNumber Response: [{"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"9999999999","gender":"Male"},{"userId":10002,"emailId":"user2@test.com","aadhaarNumber":"123400000031","firstName":"Rahul","lastName":"Dravid","phoneNumber":"2334567890","gender":"Male"},{"userId":10003,"emailId":"user3@test.com","aadhaarNumber":"123400000041","firstName":"Preethi","lastName":"S","phoneNumber":"3234567890","gender":"Female"}]
+2025-08-12 10:53:50 [main] INFO  LoggerUtil - Test 6 Started - Delete User By Id
+2025-08-12 10:53:50 [main] INFO  LoggerUtil - DELETE /deleteUserById Response: [{"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"1234567890","gender":"Male"},{"userId":10003,"emailId":"user3@test.com","aadhaarNumber":"123400000041","firstName":"Preethi","lastName":"S","phoneNumber":"3234567890","gender":"Female"}]
+2025-08-12 10:53:50 [main] INFO  LoggerUtil - Invalid Test - Add User with Invalid Data
+2025-08-12 10:53:50 [main] INFO  LoggerUtil - Testing multiple invalid scenarios for user addition...
+2025-08-12 10:53:50 [main] INFO  LoggerUtil - Scenario 1: Testing with missing required fields...
+2025-08-12 10:53:51 [main] INFO  LoggerUtil - Invalid Test - View User with Invalid Data
+2025-08-12 10:53:51 [main] INFO  LoggerUtil - Testing multiple invalid scenarios for user viewing...
+2025-08-12 10:53:51 [main] INFO  LoggerUtil - Scenario 1: Testing with non-existent user ID...
+2025-08-12 10:53:51 [main] INFO  LoggerUtil - Invalid Test - Update User with Invalid Data
+2025-08-12 10:53:51 [main] INFO  LoggerUtil - Testing multiple invalid scenarios for user update...
+2025-08-12 10:53:51 [main] INFO  LoggerUtil - Scenario 1: Testing with non-existent user ID...
+2025-08-12 10:53:51 [main] INFO  LoggerUtil - Invalid Test - Delete User with Invalid Data
+2025-08-12 10:53:51 [main] INFO  LoggerUtil - Testing multiple invalid scenarios for user deletion...
+2025-08-12 10:53:51 [main] INFO  LoggerUtil - Scenario 1: Testing with non-existent user ID...
+2025-08-12 10:59:55 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\saheb\eclipse-workspace\CallTaxi_RestAssured\testng.xml
+
+2025-08-12 10:59:55 [main] INFO  LoggerUtil - ===== Setting up API Test Base =====
+2025-08-12 10:59:55 [main] INFO  LoggerUtil - Base URI set to: https://webapps.tekstac.com/HotelAPI/UserService
+2025-08-12 10:59:55 [main] INFO  LoggerUtil - Requesting Auth Code from: https://webapps.tekstac.com/OAuthRestApi/webapi/auth/login
+2025-08-12 10:59:57 [main] INFO  LoggerUtil - Auth Code Response Status: 200
+2025-08-12 10:59:57 [main] INFO  LoggerUtil - Auth Code Response Body: {"auth_code":"ybKlA71mAOawATSJJp38sQ"}
+2025-08-12 10:59:58 [main] INFO  LoggerUtil - Auth Code: ybKlA71mAOawATSJJp38sQ
+2025-08-12 10:59:58 [main] INFO  LoggerUtil - Requesting Access Token from: https://webapps.tekstac.com/OAuthRestApi/webapi/auth/token using Auth Code: ybKlA71mAOawATSJJp38sQ
+2025-08-12 10:59:58 [main] INFO  LoggerUtil - Access Token Response Status: 200
+2025-08-12 10:59:58 [main] INFO  LoggerUtil - Access Token Response Body: {"access_token":"2RJ99NzhgnM-TdpC9xcJcE3iHzPArK55CrxfEuuH68s"}
+2025-08-12 10:59:58 [main] INFO  LoggerUtil - Access Token: 2RJ99NzhgnM-TdpC9xcJcE3iHzPArK55CrxfEuuH68s
+2025-08-12 10:59:58 [main] INFO  LoggerUtil - Test 1 Started - Get Users (viewUserList)
+2025-08-12 10:59:58 [main] INFO  LoggerUtil - Fetching all users...
+2025-08-12 10:59:58 [main] INFO  LoggerUtil - GET /viewUserList Response: [{"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"1234567890","gender":"Male"},{"userId":10002,"emailId":"user2@test.com","aadhaarNumber":"123400000031","firstName":"Rahul","lastName":"Dravid","phoneNumber":"2334567890","gender":"Male"},{"userId":10003,"emailId":"user3@test.com","aadhaarNumber":"123400000041","firstName":"Preethi","lastName":"S","phoneNumber":"3234567890","gender":"Female"}]
+2025-08-12 10:59:58 [main] INFO  LoggerUtil - Users fetched: 3
+2025-08-12 10:59:58 [main] INFO  LoggerUtil - Test 2 Started - Get User By Id
+2025-08-12 10:59:58 [main] INFO  LoggerUtil - Fetching user by ID: 10001
+2025-08-12 10:59:58 [main] INFO  LoggerUtil - GET /viewUserById Response: {"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"1234567890","gender":"Male"}
+2025-08-12 10:59:58 [main] INFO  LoggerUtil - User details: {userId=10001, emailId=user1@test.com, aadhaarNumber=123400000011, firstName=Raj, lastName=Kumar, phoneNumber=1234567890, gender=Male}
+2025-08-12 10:59:58 [main] INFO  LoggerUtil - Test 3 Started - Get Users By Gender
+2025-08-12 10:59:58 [main] INFO  LoggerUtil - Fetching users by gender: Male
+2025-08-12 10:59:58 [main] INFO  LoggerUtil - GET /viewUserByGender Response: [{"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"1234567890","gender":"Male"},{"userId":10002,"emailId":"user2@test.com","aadhaarNumber":"123400000031","firstName":"Rahul","lastName":"Dravid","phoneNumber":"2334567890","gender":"Male"}]
+2025-08-12 10:59:58 [main] INFO  LoggerUtil - Test 4 Started - Add User
+2025-08-12 10:59:58 [main] INFO  LoggerUtil - Adding a new user...
+2025-08-12 10:59:59 [main] INFO  LoggerUtil - POST /addUser Response: [{"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"1234567890","gender":"Male"},{"userId":10002,"emailId":"user2@test.com","aadhaarNumber":"123400000031","firstName":"Rahul","lastName":"Dravid","phoneNumber":"2334567890","gender":"Male"},{"userId":10003,"emailId":"user3@test.com","aadhaarNumber":"123400000041","firstName":"Preethi","lastName":"S","phoneNumber":"3234567890","gender":"Female"},{"userId":20001,"emailId":"newuser@test.com","aadhaarNumber":"123456789012","firstName":"John","lastName":"Doe","phoneNumber":"9876543210","gender":"Male"}]
+2025-08-12 10:59:59 [main] INFO  LoggerUtil - Test 5 Started - Update User Phone Number
+2025-08-12 10:59:59 [main] INFO  LoggerUtil - Updating phone number for user ID 10001...
+2025-08-12 10:59:59 [main] INFO  LoggerUtil - PUT /updateUserNumber Response: [{"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"9999999999","gender":"Male"},{"userId":10002,"emailId":"user2@test.com","aadhaarNumber":"123400000031","firstName":"Rahul","lastName":"Dravid","phoneNumber":"2334567890","gender":"Male"},{"userId":10003,"emailId":"user3@test.com","aadhaarNumber":"123400000041","firstName":"Preethi","lastName":"S","phoneNumber":"3234567890","gender":"Female"}]
+2025-08-12 10:59:59 [main] INFO  LoggerUtil - Test 6 Started - Delete User By Id
+2025-08-12 10:59:59 [main] INFO  LoggerUtil - DELETE /deleteUserById Response: [{"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"1234567890","gender":"Male"},{"userId":10003,"emailId":"user3@test.com","aadhaarNumber":"123400000041","firstName":"Preethi","lastName":"S","phoneNumber":"3234567890","gender":"Female"}]
+2025-08-12 10:59:59 [main] INFO  LoggerUtil - Invalid Test - Add User with Invalid Data
+2025-08-12 10:59:59 [main] INFO  LoggerUtil - Testing multiple invalid scenarios for user addition...
+2025-08-12 10:59:59 [main] INFO  LoggerUtil - Scenario: Testing with invalid email format...
+2025-08-12 10:59:59 [main] INFO  LoggerUtil - Invalid Test - View User with Invalid Data
+2025-08-12 10:59:59 [main] INFO  LoggerUtil - Testing multiple invalid scenarios for user viewing...
+2025-08-12 10:59:59 [main] INFO  LoggerUtil - Scenario: Testing with non-existent user ID...
+2025-08-12 10:59:59 [main] INFO  LoggerUtil - Invalid Test - Update User with Invalid Data
+2025-08-12 10:59:59 [main] INFO  LoggerUtil - Testing multiple invalid scenarios for user update...
+2025-08-12 10:59:59 [main] INFO  LoggerUtil - Scenario: Testing with non-existent user ID...
+2025-08-12 10:59:59 [main] INFO  LoggerUtil - Invalid Test - Delete User with Invalid Data
+2025-08-12 10:59:59 [main] INFO  LoggerUtil - Testing multiple invalid scenarios for user deletion...
+2025-08-12 10:59:59 [main] INFO  LoggerUtil - Scenario: Testing with non-existent user ID...
+2025-08-12 11:04:29 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\saheb\eclipse-workspace\CallTaxi_RestAssured\testng.xml
+
+2025-08-12 11:04:29 [main] INFO  LoggerUtil - ===== Setting up API Test Base =====
+2025-08-12 11:04:29 [main] INFO  LoggerUtil - Base URI set to: https://webapps.tekstac.com/HotelAPI/UserService
+2025-08-12 11:04:29 [main] INFO  LoggerUtil - Requesting Auth Code from: https://webapps.tekstac.com/OAuthRestApi/webapi/auth/login
+2025-08-12 11:04:30 [main] INFO  LoggerUtil - Auth Code Response Status: 200
+2025-08-12 11:04:30 [main] INFO  LoggerUtil - Auth Code Response Body: {"auth_code":"M_-SEw_EcZgaBIwJfy7ebg"}
+2025-08-12 11:04:31 [main] INFO  LoggerUtil - Auth Code: M_-SEw_EcZgaBIwJfy7ebg
+2025-08-12 11:04:31 [main] INFO  LoggerUtil - Requesting Access Token from: https://webapps.tekstac.com/OAuthRestApi/webapi/auth/token using Auth Code: M_-SEw_EcZgaBIwJfy7ebg
+2025-08-12 11:04:31 [main] INFO  LoggerUtil - Access Token Response Status: 200
+2025-08-12 11:04:31 [main] INFO  LoggerUtil - Access Token Response Body: {"access_token":"HOPhRmAQ7mGzguIB4054IxQrPOjUuSMKPbIcWZjqvcM"}
+2025-08-12 11:04:31 [main] INFO  LoggerUtil - Access Token: HOPhRmAQ7mGzguIB4054IxQrPOjUuSMKPbIcWZjqvcM
+2025-08-12 11:04:31 [main] INFO  LoggerUtil - Test 1 Started - Get Users (viewUserList)
+2025-08-12 11:04:31 [main] INFO  LoggerUtil - Fetching all users...
+2025-08-12 11:04:31 [main] INFO  LoggerUtil - GET /viewUserList Response: [{"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"1234567890","gender":"Male"},{"userId":10002,"emailId":"user2@test.com","aadhaarNumber":"123400000031","firstName":"Rahul","lastName":"Dravid","phoneNumber":"2334567890","gender":"Male"},{"userId":10003,"emailId":"user3@test.com","aadhaarNumber":"123400000041","firstName":"Preethi","lastName":"S","phoneNumber":"3234567890","gender":"Female"}]
+2025-08-12 11:04:31 [main] INFO  LoggerUtil - Users fetched: 3
+2025-08-12 11:04:31 [main] INFO  LoggerUtil - Test 2 Started - Get User By Id
+2025-08-12 11:04:31 [main] INFO  LoggerUtil - Fetching user by ID: 10001
+2025-08-12 11:04:31 [main] INFO  LoggerUtil - GET /viewUserById Response: {"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"1234567890","gender":"Male"}
+2025-08-12 11:04:31 [main] INFO  LoggerUtil - User details: {userId=10001, emailId=user1@test.com, aadhaarNumber=123400000011, firstName=Raj, lastName=Kumar, phoneNumber=1234567890, gender=Male}
+2025-08-12 11:04:31 [main] INFO  LoggerUtil - Test 3 Started - Get Users By Gender
+2025-08-12 11:04:31 [main] INFO  LoggerUtil - Fetching users by gender: Male
+2025-08-12 11:04:32 [main] INFO  LoggerUtil - GET /viewUserByGender Response: [{"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"1234567890","gender":"Male"},{"userId":10002,"emailId":"user2@test.com","aadhaarNumber":"123400000031","firstName":"Rahul","lastName":"Dravid","phoneNumber":"2334567890","gender":"Male"}]
+2025-08-12 11:04:32 [main] INFO  LoggerUtil - Test 4 Started - Add User
+2025-08-12 11:04:32 [main] INFO  LoggerUtil - Adding a new user...
+2025-08-12 11:04:32 [main] INFO  LoggerUtil - POST /addUser Response: [{"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"1234567890","gender":"Male"},{"userId":10002,"emailId":"user2@test.com","aadhaarNumber":"123400000031","firstName":"Rahul","lastName":"Dravid","phoneNumber":"2334567890","gender":"Male"},{"userId":10003,"emailId":"user3@test.com","aadhaarNumber":"123400000041","firstName":"Preethi","lastName":"S","phoneNumber":"3234567890","gender":"Female"},{"userId":20001,"emailId":"newuser@test.com","aadhaarNumber":"123456789012","firstName":"John","lastName":"Doe","phoneNumber":"9876543210","gender":"Male"}]
+2025-08-12 11:04:32 [main] INFO  LoggerUtil - Test 5 Started - Update User Phone Number
+2025-08-12 11:04:32 [main] INFO  LoggerUtil - Updating phone number for user ID 10001...
+2025-08-12 11:04:32 [main] INFO  LoggerUtil - PUT /updateUserNumber Response: [{"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"9999999999","gender":"Male"},{"userId":10002,"emailId":"user2@test.com","aadhaarNumber":"123400000031","firstName":"Rahul","lastName":"Dravid","phoneNumber":"2334567890","gender":"Male"},{"userId":10003,"emailId":"user3@test.com","aadhaarNumber":"123400000041","firstName":"Preethi","lastName":"S","phoneNumber":"3234567890","gender":"Female"}]
+2025-08-12 11:04:32 [main] INFO  LoggerUtil - Test 6 Started - Delete User By Id
+2025-08-12 11:04:32 [main] INFO  LoggerUtil - DELETE /deleteUserById Response: [{"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"1234567890","gender":"Male"},{"userId":10003,"emailId":"user3@test.com","aadhaarNumber":"123400000041","firstName":"Preethi","lastName":"S","phoneNumber":"3234567890","gender":"Female"}]
+2025-08-12 11:04:32 [main] INFO  LoggerUtil - Test 7 Started - Add User with Invalid Email Format
+2025-08-12 11:04:32 [main] INFO  LoggerUtil - Testing with invalid email format...
+2025-08-12 11:04:32 [main] INFO  LoggerUtil - Attempting to add user with invalid email format...
+2025-08-12 11:04:32 [main] INFO  LoggerUtil - Test 8 Started - View User with Non-Existent ID
+2025-08-12 11:04:32 [main] INFO  LoggerUtil - Testing with non-existent user ID...
+2025-08-12 11:04:32 [main] INFO  LoggerUtil - Attempting to fetch user with non-existent ID...
+2025-08-12 11:04:32 [main] INFO  LoggerUtil - Test 9 Started - Update User with Non-Existent ID
+2025-08-12 11:04:32 [main] INFO  LoggerUtil - Testing with non-existent user ID...
+2025-08-12 11:04:32 [main] INFO  LoggerUtil - Attempting to update user with non-existent ID...
+2025-08-12 11:04:32 [main] INFO  LoggerUtil - Test 10 Started - Delete User with Non-Existent ID
+2025-08-12 11:04:32 [main] INFO  LoggerUtil - Testing with non-existent user ID...
+2025-08-12 11:04:32 [main] INFO  LoggerUtil - Attempting to delete user with non-existent ID...
+2025-08-12 11:07:13 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\saheb\eclipse-workspace\CallTaxi_RestAssured\testng.xml
+
+2025-08-12 11:07:13 [main] INFO  LoggerUtil - ===== Setting up API Test Base =====
+2025-08-12 11:07:14 [main] INFO  LoggerUtil - Base URI set to: https://webapps.tekstac.com/HotelAPI/UserService
+2025-08-12 11:07:14 [main] INFO  LoggerUtil - Requesting Auth Code from: https://webapps.tekstac.com/OAuthRestApi/webapi/auth/login
+2025-08-12 11:07:15 [main] INFO  LoggerUtil - Auth Code Response Status: 200
+2025-08-12 11:07:15 [main] INFO  LoggerUtil - Auth Code Response Body: {"auth_code":"UbZo--oHRPAZo3Ce-NHeBw"}
+2025-08-12 11:07:16 [main] INFO  LoggerUtil - Auth Code: UbZo--oHRPAZo3Ce-NHeBw
+2025-08-12 11:07:16 [main] INFO  LoggerUtil - Requesting Access Token from: https://webapps.tekstac.com/OAuthRestApi/webapi/auth/token using Auth Code: UbZo--oHRPAZo3Ce-NHeBw
+2025-08-12 11:07:16 [main] INFO  LoggerUtil - Access Token Response Status: 200
+2025-08-12 11:07:16 [main] INFO  LoggerUtil - Access Token Response Body: {"access_token":"BolwQN_xeBDF2wGlVOwsi018MYcg2Iw1diSqNnZ7zlQ"}
+2025-08-12 11:07:16 [main] INFO  LoggerUtil - Access Token: BolwQN_xeBDF2wGlVOwsi018MYcg2Iw1diSqNnZ7zlQ
+2025-08-12 11:07:16 [main] INFO  LoggerUtil - Test 1 Started - Get Users (viewUserList)
+2025-08-12 11:07:16 [main] INFO  LoggerUtil - Fetching all users...
+2025-08-12 11:07:16 [main] INFO  LoggerUtil - GET /viewUserList Response: [{"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"1234567890","gender":"Male"},{"userId":10002,"emailId":"user2@test.com","aadhaarNumber":"123400000031","firstName":"Rahul","lastName":"Dravid","phoneNumber":"2334567890","gender":"Male"},{"userId":10003,"emailId":"user3@test.com","aadhaarNumber":"123400000041","firstName":"Preethi","lastName":"S","phoneNumber":"3234567890","gender":"Female"}]
+2025-08-12 11:07:17 [main] INFO  LoggerUtil - Users fetched: 3
+2025-08-12 11:07:17 [main] INFO  LoggerUtil - Test 2 Started - Get User By Id
+2025-08-12 11:07:17 [main] INFO  LoggerUtil - Fetching user by ID: 10001
+2025-08-12 11:07:17 [main] INFO  LoggerUtil - GET /viewUserById Response: {"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"1234567890","gender":"Male"}
+2025-08-12 11:07:17 [main] INFO  LoggerUtil - User details: {userId=10001, emailId=user1@test.com, aadhaarNumber=123400000011, firstName=Raj, lastName=Kumar, phoneNumber=1234567890, gender=Male}
+2025-08-12 11:07:17 [main] INFO  LoggerUtil - Test 3 Started - Get Users By Gender
+2025-08-12 11:07:17 [main] INFO  LoggerUtil - Fetching users by gender: Male
+2025-08-12 11:07:17 [main] INFO  LoggerUtil - GET /viewUserByGender Response: [{"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"1234567890","gender":"Male"},{"userId":10002,"emailId":"user2@test.com","aadhaarNumber":"123400000031","firstName":"Rahul","lastName":"Dravid","phoneNumber":"2334567890","gender":"Male"}]
+2025-08-12 11:07:17 [main] INFO  LoggerUtil - Test 4 Started - Add User
+2025-08-12 11:07:17 [main] INFO  LoggerUtil - Adding a new user...
+2025-08-12 11:07:17 [main] INFO  LoggerUtil - POST /addUser Response: [{"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"1234567890","gender":"Male"},{"userId":10002,"emailId":"user2@test.com","aadhaarNumber":"123400000031","firstName":"Rahul","lastName":"Dravid","phoneNumber":"2334567890","gender":"Male"},{"userId":10003,"emailId":"user3@test.com","aadhaarNumber":"123400000041","firstName":"Preethi","lastName":"S","phoneNumber":"3234567890","gender":"Female"},{"userId":20001,"emailId":"newuser@test.com","aadhaarNumber":"123456789012","firstName":"John","lastName":"Doe","phoneNumber":"9876543210","gender":"Male"}]
+2025-08-12 11:07:17 [main] INFO  LoggerUtil - Test 5 Started - Update User Phone Number
+2025-08-12 11:07:17 [main] INFO  LoggerUtil - Updating phone number for user ID 10001...
+2025-08-12 11:07:17 [main] INFO  LoggerUtil - PUT /updateUserNumber Response: [{"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"9999999999","gender":"Male"},{"userId":10002,"emailId":"user2@test.com","aadhaarNumber":"123400000031","firstName":"Rahul","lastName":"Dravid","phoneNumber":"2334567890","gender":"Male"},{"userId":10003,"emailId":"user3@test.com","aadhaarNumber":"123400000041","firstName":"Preethi","lastName":"S","phoneNumber":"3234567890","gender":"Female"}]
+2025-08-12 11:07:17 [main] INFO  LoggerUtil - Test 6 Started - Delete User By Id
+2025-08-12 11:07:17 [main] INFO  LoggerUtil - DELETE /deleteUserById Response: [{"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"1234567890","gender":"Male"},{"userId":10003,"emailId":"user3@test.com","aadhaarNumber":"123400000041","firstName":"Preethi","lastName":"S","phoneNumber":"3234567890","gender":"Female"}]
+2025-08-12 11:07:17 [main] INFO  LoggerUtil - Test 7 Started - Add User with Invalid Email Format
+2025-08-12 11:07:17 [main] INFO  LoggerUtil - Testing with invalid email format...
+2025-08-12 11:07:17 [main] INFO  LoggerUtil - Attempting to add user with invalid email format (invalid-email-format)...
+2025-08-12 11:07:17 [main] INFO  LoggerUtil - Test 8 Started - View User with Non-Existent ID
+2025-08-12 11:07:17 [main] INFO  LoggerUtil - Testing with non-existent user ID...
+2025-08-12 11:07:17 [main] INFO  LoggerUtil - Attempting to fetch user with non-existent ID (12345)...
+2025-08-12 11:07:18 [main] INFO  LoggerUtil - Test 9 Started - Update User with Non-Existent ID
+2025-08-12 11:07:18 [main] INFO  LoggerUtil - Testing with non-existent user ID...
+2025-08-12 11:07:18 [main] INFO  LoggerUtil - Attempting to update user with non-existent ID (99999)...
+2025-08-12 11:07:18 [main] INFO  LoggerUtil - Test 10 Started - Delete User with Non-Existent ID
+2025-08-12 11:07:18 [main] INFO  LoggerUtil - Testing with non-existent user ID...
+2025-08-12 11:07:18 [main] INFO  LoggerUtil - Attempting to delete user with non-existent ID (00000)...
+2025-08-12 11:09:57 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\saheb\eclipse-workspace\CallTaxi_RestAssured\testng.xml
+
+2025-08-12 11:09:57 [main] INFO  LoggerUtil - ===== Setting up API Test Base =====
+2025-08-12 11:09:58 [main] INFO  LoggerUtil - Base URI set to: https://webapps.tekstac.com/HotelAPI/UserService
+2025-08-12 11:09:58 [main] INFO  LoggerUtil - Requesting Auth Code from: https://webapps.tekstac.com/OAuthRestApi/webapi/auth/login
+2025-08-12 11:09:59 [main] INFO  LoggerUtil - Auth Code Response Status: 200
+2025-08-12 11:09:59 [main] INFO  LoggerUtil - Auth Code Response Body: {"auth_code":"565jkZwvLPGPxh9x5fN2oA"}
+2025-08-12 11:10:00 [main] INFO  LoggerUtil - Auth Code: 565jkZwvLPGPxh9x5fN2oA
+2025-08-12 11:10:00 [main] INFO  LoggerUtil - Requesting Access Token from: https://webapps.tekstac.com/OAuthRestApi/webapi/auth/token using Auth Code: 565jkZwvLPGPxh9x5fN2oA
+2025-08-12 11:10:00 [main] INFO  LoggerUtil - Access Token Response Status: 200
+2025-08-12 11:10:00 [main] INFO  LoggerUtil - Access Token Response Body: {"access_token":"TxwcrVCX1JmG2hHZ67H-vu4r9BGEu0Pt1WIbiZOiZxY"}
+2025-08-12 11:10:00 [main] INFO  LoggerUtil - Access Token: TxwcrVCX1JmG2hHZ67H-vu4r9BGEu0Pt1WIbiZOiZxY
+2025-08-12 11:10:00 [main] INFO  LoggerUtil - Test 1 Started - Get Users (viewUserList)
+2025-08-12 11:10:00 [main] INFO  LoggerUtil - Fetching all users...
+2025-08-12 11:10:00 [main] INFO  LoggerUtil - GET /viewUserList Response: [{"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"1234567890","gender":"Male"},{"userId":10002,"emailId":"user2@test.com","aadhaarNumber":"123400000031","firstName":"Rahul","lastName":"Dravid","phoneNumber":"2334567890","gender":"Male"},{"userId":10003,"emailId":"user3@test.com","aadhaarNumber":"123400000041","firstName":"Preethi","lastName":"S","phoneNumber":"3234567890","gender":"Female"}]
+2025-08-12 11:10:00 [main] INFO  LoggerUtil - Users fetched: 3
+2025-08-12 11:10:00 [main] INFO  LoggerUtil - Test 2 Started - Get User By Id
+2025-08-12 11:10:00 [main] INFO  LoggerUtil - Fetching user by ID: 10001
+2025-08-12 11:10:00 [main] INFO  LoggerUtil - GET /viewUserById Response: {"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"1234567890","gender":"Male"}
+2025-08-12 11:10:00 [main] INFO  LoggerUtil - User details: {userId=10001, emailId=user1@test.com, aadhaarNumber=123400000011, firstName=Raj, lastName=Kumar, phoneNumber=1234567890, gender=Male}
+2025-08-12 11:10:00 [main] INFO  LoggerUtil - Test 3 Started - Get Users By Gender
+2025-08-12 11:10:00 [main] INFO  LoggerUtil - Fetching users by gender: Male
+2025-08-12 11:10:00 [main] INFO  LoggerUtil - GET /viewUserByGender Response: [{"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"1234567890","gender":"Male"},{"userId":10002,"emailId":"user2@test.com","aadhaarNumber":"123400000031","firstName":"Rahul","lastName":"Dravid","phoneNumber":"2334567890","gender":"Male"}]
+2025-08-12 11:10:00 [main] INFO  LoggerUtil - Test 4 Started - Add User
+2025-08-12 11:10:00 [main] INFO  LoggerUtil - Adding a new user...
+2025-08-12 11:10:01 [main] INFO  LoggerUtil - POST /addUser Response: [{"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"1234567890","gender":"Male"},{"userId":10002,"emailId":"user2@test.com","aadhaarNumber":"123400000031","firstName":"Rahul","lastName":"Dravid","phoneNumber":"2334567890","gender":"Male"},{"userId":10003,"emailId":"user3@test.com","aadhaarNumber":"123400000041","firstName":"Preethi","lastName":"S","phoneNumber":"3234567890","gender":"Female"},{"userId":20001,"emailId":"newuser@test.com","aadhaarNumber":"123456789012","firstName":"John","lastName":"Doe","phoneNumber":"9876543210","gender":"Male"}]
+2025-08-12 11:10:01 [main] INFO  LoggerUtil - Test 5 Started - Update User Phone Number
+2025-08-12 11:10:01 [main] INFO  LoggerUtil - Updating phone number for user ID 10001...
+2025-08-12 11:10:01 [main] INFO  LoggerUtil - PUT /updateUserNumber Response: [{"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"9999999999","gender":"Male"},{"userId":10002,"emailId":"user2@test.com","aadhaarNumber":"123400000031","firstName":"Rahul","lastName":"Dravid","phoneNumber":"2334567890","gender":"Male"},{"userId":10003,"emailId":"user3@test.com","aadhaarNumber":"123400000041","firstName":"Preethi","lastName":"S","phoneNumber":"3234567890","gender":"Female"}]
+2025-08-12 11:10:01 [main] INFO  LoggerUtil - Test 6 Started - Delete User By Id
+2025-08-12 11:10:01 [main] INFO  LoggerUtil - DELETE /deleteUserById Response: [{"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"1234567890","gender":"Male"},{"userId":10003,"emailId":"user3@test.com","aadhaarNumber":"123400000041","firstName":"Preethi","lastName":"S","phoneNumber":"3234567890","gender":"Female"}]
+2025-08-12 11:10:01 [main] INFO  LoggerUtil - Test 7 Started - Add User with Invalid Email Format
+2025-08-12 11:10:01 [main] INFO  LoggerUtil - Testing with invalid email format...
+2025-08-12 11:10:01 [main] INFO  LoggerUtil - Attempting to add user with invalid email format (invalid-email-format)...
+2025-08-12 11:10:01 [main] INFO  LoggerUtil - Test 8 Started - View User with Non-Existent ID
+2025-08-12 11:10:01 [main] INFO  LoggerUtil - Testing with non-existent user ID...
+2025-08-12 11:10:01 [main] INFO  LoggerUtil - Attempting to fetch user with non-existent ID (12345)...
+2025-08-12 11:10:01 [main] INFO  LoggerUtil - Test 9 Started - Update User with Non-Existent ID
+2025-08-12 11:10:01 [main] INFO  LoggerUtil - Testing with non-existent user ID...
+2025-08-12 11:10:01 [main] INFO  LoggerUtil - Attempting to update user with non-existent ID (99999)...
+2025-08-12 11:10:01 [main] INFO  LoggerUtil - Test 10 Started - Delete User with Non-Existent ID
+2025-08-12 11:10:01 [main] INFO  LoggerUtil - Testing with non-existent user ID...
+2025-08-12 11:10:01 [main] INFO  LoggerUtil - Attempting to delete user with non-existent ID (00000)...
+2025-08-12 11:10:35 [main] INFO  Utils - [TestNG] Running:
+  C:\Users\saheb\eclipse-workspace\CallTaxi_RestAssured\testng.xml
+
+2025-08-12 11:10:35 [main] INFO  LoggerUtil - ===== Setting up API Test Base =====
+2025-08-12 11:10:35 [main] INFO  LoggerUtil - Base URI set to: https://webapps.tekstac.com/HotelAPI/UserService
+2025-08-12 11:10:35 [main] INFO  LoggerUtil - Requesting Auth Code from: https://webapps.tekstac.com/OAuthRestApi/webapi/auth/login
+2025-08-12 11:10:37 [main] INFO  LoggerUtil - Auth Code Response Status: 200
+2025-08-12 11:10:37 [main] INFO  LoggerUtil - Auth Code Response Body: {"auth_code":"L3wiZ95vTr8mzTef76c9qA"}
+2025-08-12 11:10:37 [main] INFO  LoggerUtil - Auth Code: L3wiZ95vTr8mzTef76c9qA
+2025-08-12 11:10:37 [main] INFO  LoggerUtil - Requesting Access Token from: https://webapps.tekstac.com/OAuthRestApi/webapi/auth/token using Auth Code: L3wiZ95vTr8mzTef76c9qA
+2025-08-12 11:10:37 [main] INFO  LoggerUtil - Access Token Response Status: 200
+2025-08-12 11:10:37 [main] INFO  LoggerUtil - Access Token Response Body: {"access_token":"zGKI3eUGj1xWC_Jl3tKVnxxrrm81S1ael0OJaixRs38"}
+2025-08-12 11:10:37 [main] INFO  LoggerUtil - Access Token: zGKI3eUGj1xWC_Jl3tKVnxxrrm81S1ael0OJaixRs38
+2025-08-12 11:10:37 [main] INFO  LoggerUtil - Test 1 Started - Get Users (viewUserList)
+2025-08-12 11:10:37 [main] INFO  LoggerUtil - Fetching all users...
+2025-08-12 11:10:38 [main] INFO  LoggerUtil - GET /viewUserList Response: [{"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"1234567890","gender":"Male"},{"userId":10002,"emailId":"user2@test.com","aadhaarNumber":"123400000031","firstName":"Rahul","lastName":"Dravid","phoneNumber":"2334567890","gender":"Male"},{"userId":10003,"emailId":"user3@test.com","aadhaarNumber":"123400000041","firstName":"Preethi","lastName":"S","phoneNumber":"3234567890","gender":"Female"}]
+2025-08-12 11:10:38 [main] INFO  LoggerUtil - Users fetched: 3
+2025-08-12 11:10:38 [main] INFO  LoggerUtil - Test 2 Started - Get User By Id
+2025-08-12 11:10:38 [main] INFO  LoggerUtil - Fetching user by ID: 10001
+2025-08-12 11:10:38 [main] INFO  LoggerUtil - GET /viewUserById Response: {"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"1234567890","gender":"Male"}
+2025-08-12 11:10:38 [main] INFO  LoggerUtil - User details: {userId=10001, emailId=user1@test.com, aadhaarNumber=123400000011, firstName=Raj, lastName=Kumar, phoneNumber=1234567890, gender=Male}
+2025-08-12 11:10:38 [main] INFO  LoggerUtil - Test 3 Started - Get Users By Gender
+2025-08-12 11:10:38 [main] INFO  LoggerUtil - Fetching users by gender: Male
+2025-08-12 11:10:38 [main] INFO  LoggerUtil - GET /viewUserByGender Response: [{"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"1234567890","gender":"Male"},{"userId":10002,"emailId":"user2@test.com","aadhaarNumber":"123400000031","firstName":"Rahul","lastName":"Dravid","phoneNumber":"2334567890","gender":"Male"}]
+2025-08-12 11:10:38 [main] INFO  LoggerUtil - Test 4 Started - Add User
+2025-08-12 11:10:38 [main] INFO  LoggerUtil - Adding a new user...
+2025-08-12 11:10:38 [main] INFO  LoggerUtil - POST /addUser Response: [{"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"1234567890","gender":"Male"},{"userId":10002,"emailId":"user2@test.com","aadhaarNumber":"123400000031","firstName":"Rahul","lastName":"Dravid","phoneNumber":"2334567890","gender":"Male"},{"userId":10003,"emailId":"user3@test.com","aadhaarNumber":"123400000041","firstName":"Preethi","lastName":"S","phoneNumber":"3234567890","gender":"Female"},{"userId":20001,"emailId":"newuser@test.com","aadhaarNumber":"123456789012","firstName":"John","lastName":"Doe","phoneNumber":"9876543210","gender":"Male"}]
+2025-08-12 11:10:38 [main] INFO  LoggerUtil - Test 5 Started - Update User Phone Number
+2025-08-12 11:10:38 [main] INFO  LoggerUtil - Updating phone number for user ID 10001...
+2025-08-12 11:10:38 [main] INFO  LoggerUtil - PUT /updateUserNumber Response: [{"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"9999999999","gender":"Male"},{"userId":10002,"emailId":"user2@test.com","aadhaarNumber":"123400000031","firstName":"Rahul","lastName":"Dravid","phoneNumber":"2334567890","gender":"Male"},{"userId":10003,"emailId":"user3@test.com","aadhaarNumber":"123400000041","firstName":"Preethi","lastName":"S","phoneNumber":"3234567890","gender":"Female"}]
+2025-08-12 11:10:38 [main] INFO  LoggerUtil - Test 6 Started - Delete User By Id
+2025-08-12 11:10:39 [main] INFO  LoggerUtil - DELETE /deleteUserById Response: [{"userId":10001,"emailId":"user1@test.com","aadhaarNumber":"123400000011","firstName":"Raj","lastName":"Kumar","phoneNumber":"1234567890","gender":"Male"},{"userId":10003,"emailId":"user3@test.com","aadhaarNumber":"123400000041","firstName":"Preethi","lastName":"S","phoneNumber":"3234567890","gender":"Female"}]
+2025-08-12 11:10:39 [main] INFO  LoggerUtil - Test 7 Started - Add User with Invalid Email Format
+2025-08-12 11:10:39 [main] INFO  LoggerUtil - Testing with invalid email format...
+2025-08-12 11:10:39 [main] INFO  LoggerUtil - Attempting to add user with invalid email format (invalid-email-format)...
+2025-08-12 11:10:39 [main] INFO  LoggerUtil - Test 8 Started - View User with Non-Existent ID
+2025-08-12 11:10:39 [main] INFO  LoggerUtil - Testing with non-existent user ID...
+2025-08-12 11:10:39 [main] INFO  LoggerUtil - Attempting to fetch user with non-existent ID (12345)...
+2025-08-12 11:10:39 [main] INFO  LoggerUtil - Test 9 Started - Update User with Non-Existent ID
+2025-08-12 11:10:39 [main] INFO  LoggerUtil - Testing with non-existent user ID...
+2025-08-12 11:10:39 [main] INFO  LoggerUtil - Attempting to update user with non-existent ID (99999)...
+2025-08-12 11:10:39 [main] INFO  LoggerUtil - Test 10 Started - Delete User with Non-Existent ID
+2025-08-12 11:10:39 [main] INFO  LoggerUtil - Testing with non-existent user ID...
+2025-08-12 11:10:39 [main] INFO  LoggerUtil - Attempting to delete user with non-existent ID (00000)...

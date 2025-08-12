@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Valid API Tests">
+    <classes>
+      <class name="com.qa.api.tests.ViewUserTests"/>
+      <class name="com.qa.api.tests.AddUserTests"/>
+      <class name="com.qa.api.tests.UpdateUserTests"/>
+      <class name="com.qa.api.tests.DeleteUserTests"/>
+    </classes>
+  </test> <!-- Valid API Tests -->
+  
+  <test thread-count="5" name="Invalid API Tests">
+    <classes>
+      <class name="com.qa.api.invalidtests.AddInvalidUserTests"/>
+      <class name="com.qa.api.invalidtests.ViewInvalidUserTests"/>
+      <class name="com.qa.api.invalidtests.UpdateInvalidUserTests"/>
+      <class name="com.qa.api.invalidtests.DeleteInvalidUserTests"/>
+    </classes>
+  </test> <!-- Invalid API Tests -->
+</suite> <!-- Suite -->
